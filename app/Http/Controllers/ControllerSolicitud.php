@@ -98,7 +98,7 @@ class ControllerSolicitud extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Solicitudes $soli)
+    public function update(Request $request, Solicitudes $solicitud)
     {
         //
         $request->validate([
@@ -113,17 +113,17 @@ class ControllerSolicitud extends Controller
             'cantidad' => 'required'
         ]);
       
-       $soli->folio_requisición = $request->folio;
-       $soli->equipo = $request->equipo;
-       $soli->marca = $request->marca;
-       $soli->modelo = $request->modelo;
-       $soli->empresa = $request->empresa;
-       $soli->sucursal = $request->sucursal;
-       $soli->usuario_final = $request->usuariof;
-       $soli->departamento_area = $request->dptoarea;
-       $soli->cantidad = $request->cantidad;
+       $solicitud->folio_requisición = $request->folio;
+       $solicitud->equipo = $request->equipo;
+       $solicitud->marca = $request->marca;
+       $solicitud->modelo = $request->modelo;
+       $solicitud->empresa = $request->empresa;
+       $solicitud->sucursal = $request->sucursal;
+       $solicitud->usuario_final = $request->usuariof;
+       $solicitud->departamento_area = $request->dptoarea;
+       $solicitud->cantidad = $request->cantidad;
 
-        $soli->save();
+        $solicitud->save();
 
         return redirect()->route('solicitud.index');  
     }

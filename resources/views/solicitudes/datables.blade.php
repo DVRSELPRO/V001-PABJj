@@ -42,25 +42,30 @@
                     <td class="d-none text-center d-sm-table-cell">{{$solicitud->DEPARTAMENTO_AREA}}</td>
                     <td>{{$solicitud->CANTIDAD}}</td>
                     <td class="d-none text-center d-sm-table-cell" style="width: 50%;">
-                    <div class="row">
-                    <a href="{{route('solicitud.show', $solicitud->id)}}">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit">
-                            <!--<i class="fa fa-pencil"></i>  -->
-                            <i class="fa fa-edit "></i>
-                        </button>
-                        </a>
-                        <form action="{{route('solicitud.destroy', $solicitud)}}" method="post">
-                            @csrf
-                            @method('Delete')
-                            <button type="button" class="btn btn-sm btn-danger" alt="eliminar" data-toggle="tooltip" title="Delete"> <i class="fa fa-times"></i> </button>
-                        </form>
+                        <div class="row">
+                            <DIV class="col-6">
+                                <a href="{{route('solicitud.show', $solicitud->id)}}">
+                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit">
+                                        <!--<i class="fa fa-pencil"></i>  -->
+                                        <i class="fa fa-edit "></i>
+                                    </button>
+                                </a>
+                            </DIV>
+                            <div class="col-6">
+                                <form action="{{route('solicitud.destroy', $solicitud)}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('Delete')
+                                    <button class="btn btn-sm btn-danger" alt="eliminar" data-toggle="tooltip" title="Delete"> <i class="fa fa-times"></i> </button>
+                                </form>
+                            </div>
+                        </div>
                     </td>
-                    </div>
-                </TR>
-            </tbody>
-            @endforeach
-        </table>
     </div>
+    </TR>
+    </tbody>
+    @endforeach
+    </table>
+</div>
 </div>
 <!-- END Dynamic Table Full -->
 @endsection
