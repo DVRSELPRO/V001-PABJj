@@ -21,10 +21,18 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//función para poder agrupar links
+Route::group(['prefix' => 'v1'], function(){
+    Route::resource('solicitud', 'App\Http\Controllers\ControllerSolicitud');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    /*Route::resource('registration', 'App\Http\Controllers\RegitrationController', 
+    ['only' => ['store', 'destroy']]);
+    
+    Route::post('user', ['uses' => 'App\Http\Controllers\AuthController@store']);
+    
+    Route::post('user/signin', ['uses' => 'App\Http\Controllers\AuthController@signin']);*/
+});
