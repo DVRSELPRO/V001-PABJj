@@ -48,7 +48,7 @@ class ControllerSolicitud extends Controller
             'sucursal' => 'required',
             'usuariof' => 'required',
             'dptoarea' => 'required',
-            'cantidad' => 'required'
+            'cantidad' => 'required|numeric'
         ]);
 
         $soli = new solicitudes();
@@ -110,7 +110,7 @@ class ControllerSolicitud extends Controller
             'sucursal' => 'required',
             'usuariof' => 'required',
             'dptoarea' => 'required',
-            'cantidad' => 'required'
+            'cantidad' => 'required|numeric'
         ]);
       
        $solicitud->folio_requisición = $request->folio;

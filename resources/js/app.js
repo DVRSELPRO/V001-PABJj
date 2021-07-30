@@ -8,6 +8,8 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+//importar sweealert2 para incluir confirmación al eliminar archivos.
+window.Swal = require('sweetalert2');
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

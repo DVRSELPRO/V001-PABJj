@@ -1,9 +1,10 @@
 @extends('adminlte::page')
 @section('content')
+@section('plugins.Sweetalert2', true)
 <!-- Dynamic Table Full -->
 <div class="card">
-    <div class=""><a href="{{route('solicitud.create')}}"><i class="fas fa-user-plus"></i> Agregar <small>nuevo</small></a>
-    </div>
+    <!-- <div class=""><a href="{{route('solicitud.create')}}"><i class="fas fa-user-plus"></i> Agregar <small>nuevo</small></a>
+    </div> -->
     <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/tables_datatables.js -->
     <div class="">
         <table class="table table-hover table-responsive table-striped table-vcenter" border="2">
@@ -52,7 +53,7 @@
                                 </a>
                             </DIV>
                             <div class="col-6">
-                                <form action="{{route('solicitud.destroy', $solicitud)}}" method="post" enctype="multipart/form-data">
+                                <form class="eliminar" action="{{route('solicitud.destroy', $solicitud)}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('Delete')
                                     <button class="btn btn-sm btn-danger" alt="eliminar" data-toggle="tooltip" title="Delete"> <i class="fa fa-times"></i> </button>
@@ -60,12 +61,46 @@
                             </div>
                         </div>
                     </td>
+                </TR>
+         </tbody>
+          @endforeach
+        </table>
     </div>
-    </TR>
-    </tbody>
-    @endforeach
-    </table>
-</div>
 </div>
 <!-- END Dynamic Table Full -->
+@endsection
+
+@section('js')
+<script>
+    $(".eliminar").click(function(e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Confirmación',
+            text: "¿Eliminar el registro?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'No',
+            confirmButtonText: 'Si'
+        }).then((result) => {
+            if (result.value == true) {
+                //console.log(result);
+                Swal.fire(
+                    'Deleted!',
+                    'Your item has been deleted.',
+                    "Success"
+                )
+                this.submit()
+            } else if (result.dismiss == 'cancel') {
+                //console.log(result);
+                Swal.fire(
+                    "Cancelled", "Your item is safe :)", "error"
+                )
+            }
+        });
+
+    });
+</script>
 @endsection

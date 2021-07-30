@@ -237,41 +237,56 @@ return [
         ],
 
         // Sidebar items:
-        [
+        /* [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
+        ], */
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Equipos',
+            'url'         => '#',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'label'       => 6,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Ubicación'],
         [
-            'text' => 'profile',
+            'text' => 'Requisiciones',
+            'url'  => 'admin/settings',
+            'icon' => 'far fa-fw fa-file',
+            'submenu' => [
+                [
+                    'text' => 'Ver ...',
+                    'url'  => '/v1/solicitud',
+                ],
+                [
+                    'text' => 'Nuevo',
+                    'url'  => '/v1/solicitud/create',
+                ],
+            ],
+        ],
+        [
+            'text' => 'Stock',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
+            'text' => 'Bodega',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        [
+        /*[
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
-                [
+                 [
                     'text' => 'level_one',
                     'url'  => '#',
-                ],
+                ], 
                 [
                     'text'    => 'level_one',
                     'url'     => '#',
@@ -283,7 +298,7 @@ return [
                         [
                             'text'    => 'level_two',
                             'url'     => '#',
-                            'submenu' => [
+                              'submenu' => [
                                 [
                                     'text' => 'level_three',
                                     'url'  => '#',
@@ -292,17 +307,17 @@ return [
                                     'text' => 'level_three',
                                     'url'  => '#',
                                 ],
-                            ],
+                            ], 
                         ],
                     ],
                 ],
-                [
+                 [
                     'text' => 'level_one',
                     'url'  => '#',
-                ],
+                ], 
             ],
         ],
-        ['header' => 'labels'],
+          ['header' => 'labels'],
         [
             'text'       => 'important',
             'icon_color' => 'red',
@@ -317,7 +332,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ], */
     ],
 
     /*

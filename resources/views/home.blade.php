@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-
+@section('plugins.Sweetalert2', true)
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -20,4 +20,14 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script>    
+Swal.fire(
+  'Bienvenido',
+  'Está es la página de inicio',
+  'success'
+)
+</script>
 @endsection
