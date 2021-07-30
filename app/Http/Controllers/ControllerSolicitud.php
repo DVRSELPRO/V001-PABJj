@@ -77,7 +77,7 @@ class ControllerSolicitud extends Controller
         //
         $solicitud = solicitudes::find($id);
     
-        return view('Solicitudes.show', compact('solicitud'));
+        return view('solicitudes.show', compact('solicitud'));
     }
 
     /**

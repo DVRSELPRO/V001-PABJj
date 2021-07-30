@@ -260,12 +260,14 @@ return [
             'icon' => 'far fa-fw fa-file',
             'submenu' => [
                 [
-                    'text' => 'Ver ...',
-                    'url'  => '/v1/solicitud',
+                    'text' => 'Agregar Nuevo',
+                    'url'  => '/v1/solicitud/create',
+                    'icon' => 'fas fa-folder-plus',
                 ],
                 [
-                    'text' => 'Nuevo',
-                    'url'  => '/v1/solicitud/create',
+                    'text' => 'Ver todo',
+                    'url'  => '/v1/solicitud',
+                    'icon' => 'fas fa-eye'
                 ],
             ],
         ],

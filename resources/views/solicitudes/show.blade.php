@@ -15,7 +15,7 @@
                         <div class="row form group m-2">
                             <div class="col-4">Folio de Req.:</div>
                             <div class="col-7">
-                                <input type="text" value="{{$solicitud->FOLIO_REQUISICIÓN}}" name="folio" id="folio">
+                                <input type="text" autofocus value="{{$solicitud->FOLIO_REQUISICIÓN}}" name="folio" id="folio">
                                 @error('folio')
                                 <br>
                                 <small class="text-danger">{{$message}}</small>
