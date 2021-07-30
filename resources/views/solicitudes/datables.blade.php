@@ -27,28 +27,43 @@
             @foreach ($soli as $solicitud)
             <tbody>
                 <TR>
-                    <TD>{{$solicitud->id}}</TD>
-                    <td>{{$solicitud->FOLIO_REQUISICIÓN}}</td>
-                    <td class="font-w300">{{$solicitud->EQUIPO}}</td>
-                    <td>{{$solicitud->MARCA}}</td>
-                    <td>{{$solicitud->MODELO}}</td>
+                    <TD><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->id}}
+                    </a>
+                    </td>
+                    <td><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->FOLIO_REQUISICIÓN}}
+                    </a></td>
+                    <td class="font-w300"><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->EQUIPO}}
+                    </a></td>
+                    <td><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->MARCA}}</a></td>
+                    <td><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->MODELO}}</a></td>
                     @if($solicitud->created_at != 'Null')
-                    <td>{{$solicitud->created_at}}</td>
+                    <td><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->created_at}}</a></td>
                     @else
                     <td>sin fecha</td>
                     @endif
-                    <td>{{$solicitud->EMPRESA}}</td>
-                    <td>{{$solicitud->SUCURSAL}}</td>
-                    <td>{{$solicitud->USUARIO_FINAL}}</td>
-                    <td class="d-none text-center d-sm-table-cell">{{$solicitud->DEPARTAMENTO_AREA}}</td>
-                    <td>{{$solicitud->CANTIDAD}}</td>
+                    <td><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->EMPRESA}}</a></td>
+                    <td><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->SUCURSAL}}</a></td>
+                    <td><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->USUARIO_FINAL}}</a></td>
+                    <td class="d-none text-center d-sm-table-cell"><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->DEPARTAMENTO_AREA}}</a</td>
+                    <td><a href="{{route('solicitud.show', $solicitud->id)}}">
+                    {{$solicitud->CANTIDAD}}</a></td>
                     <td class="d-none text-center d-sm-table-cell" style="width: 50%;">
                         <div class="row">
                             <DIV class="col-6">
                                 <a href="{{route('solicitud.show', $solicitud->id)}}">
                                     <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Edit">
                                         <!--<i class="fa fa-pencil"></i>  -->
-                                        <i class="fa fa-edit "></i>
+                                        <em class="fa fa-edit "></em>
                                     </button>
                                 </a>
                             </DIV>
@@ -56,7 +71,7 @@
                                 <form class="eliminar" action="{{route('solicitud.destroy', $solicitud)}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('Delete')
-                                    <button class="btn btn-sm btn-danger" alt="eliminar" data-toggle="tooltip" title="Delete"> <i class="fa fa-times"></i> </button>
+                                    <button class="btn btn-sm btn-danger" alt="eliminar" data-toggle="tooltip" title="Delete"> <em class="fa fa-times"></em> </button>
                                 </form>
                             </div>
                         </div>
